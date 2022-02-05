@@ -108,7 +108,7 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
             }
 
             try {
-                const response = await axios.get<IMovieDetails>('http://www.omdbapi.com/', {
+                const response = await axios.get<IMovieDetails>('https://www.omdbapi.com/', {
                     params: {
                         apiKey: 'ef721bfe',
                         i: movieId

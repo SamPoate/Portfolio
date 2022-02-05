@@ -69,7 +69,7 @@ export const Movies: React.FC = () => {
             const responses = await Promise.all(
                 pages.map(page =>
                     axios.get<{ Search: ISearch[]; totalResults: string } | { Error: string; Response: string }>(
-                        'http://www.omdbapi.com/',
+                        'https://www.omdbapi.com/',
                         {
                             params: {
                                 apiKey: 'ef721bfe',
