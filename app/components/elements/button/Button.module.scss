@@ -1,0 +1,48 @@
+@use '../../../scss/colors';
+
+.button {
+    font-size: 1.6rem;
+    line-height: 1;
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &.primary {
+        color: colors.$primary-font-color;
+        background: colors.$primary-background-color;
+
+        &:hover {
+            background: colors.$secondary-background-color;
+        }
+    }
+
+    &.secondary {
+        color: colors.$primary-font-color;
+        background: colors.$secondary-background-color;
+
+        &:hover {
+            background: colors.$primary-background-color;
+        }
+    }
+
+    &.tertiary {
+        color: colors.$primary-font-color;
+        border-color: colors.$primary-border-color;
+
+        &:hover {
+            background: colors.$primary-background-color;
+        }
+    }
+
+    &.outline {
+        color: colors.$tertiary-font-color;
+        border-color: colors.$secondary-border-color;
+
+        &:hover {
+            color: colors.$primary-font-color;
+            background: colors.$primary-background-color;
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@use '../../../scss/colors';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    p {
+        color: colors.$primary-font-color;
+    }
+
+    .intro {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            padding: 0 20px;
+
+            &:first-of-type {
+                justify-content: flex-end;
+                height: calc(50vh - 90px);
+                z-index: 1;
+            }
+
+            &:last-of-type {
+                height: calc(50vh - 30px);
+                background: colors.$secondary-background-color;
+            }
+
+            > div {
+                width: 100%;
+                max-width: 1280px;
+                margin: 0 auto;
+
+                h1,
+                h2 {
+                    font-size: 2rem;
+                    font-weight: 400;
+                    color: colors.$secondary-font-color;
+                }
+
+                h2 {
+                    margin-top: 5px;
+                }
+
+                p {
+                    font-size: 6.4rem;
+                    font-weight: 700;
+                    line-height: 1;
+                    letter-spacing: -0.03em;
+                }
+
+                .projectLinks {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 50px;
+
+                    button {
+                        color: colors.$primary-font-color;
+                        font-size: 1.6rem;
+                        line-height: 1;
+                        height: 40px;
+                        padding: 0 20px;
+                        border: 1px solid colors.$primary-border-color;
+                        border-radius: 5px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: colors.$primary-background-color;
+                        }
+
+                        ~ button {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

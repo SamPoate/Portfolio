@@ -1,0 +1,76 @@
+@use '../../scss/colors';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: colors.$primary-background-color;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        padding: 0 40px;
+        background: colors.$primary-background-color;
+
+        p {
+            color: colors.$primary-font-color;
+        }
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            max-width: 1920px;
+
+            > div {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        padding: 0 40px;
+        margin-top: auto;
+        background: colors.$primary-background-color;
+
+        p {
+            color: colors.$primary-font-color;
+        }
+
+        > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            max-width: 1920px;
+
+            > div {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-size: 1.4rem;
+
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .socials svg {
+                fill: colors.$primary-font-color;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}

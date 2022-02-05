@@ -1,0 +1,21 @@
+@use '../../../scss/colors';
+
+.select {
+    label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1;
+        display: block;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    select {
+        width: 100%;
+        height: 40px;
+        padding: 0 20px 0 10px;
+        border: 1px solid colors.$secondary-border-color;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

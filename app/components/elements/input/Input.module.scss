@@ -1,0 +1,41 @@
+@use '../../../scss/colors';
+
+.input {
+    position: relative;
+
+    &.error input {
+        border-color: colors.$error-color;
+    }
+
+    label {
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1;
+        display: block;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 0 10px;
+        border: 1px solid colors.$secondary-border-color;
+        border-radius: 5px;
+    }
+
+    .errorText {
+        color: colors.$error-color;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 5px;
+
+        svg {
+            height: 1.2rem;
+            margin-right: 5px;
+        }
+    }
+}
