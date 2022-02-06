@@ -1,6 +1,7 @@
 @use '../../../scss/colors';
 
 .button {
+    position: relative;
     font-size: 1.6rem;
     line-height: 1;
     height: 40px;
@@ -43,6 +44,25 @@
         &:hover {
             color: colors.$primary-font-color;
             background: colors.$primary-background-color;
+        }
+    }
+
+    .errorMessage {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: calc(100% + 3px);
+        left: 0;
+
+        svg {
+            fill: colors.$error-color;
+            height: 1.2rem;
+            margin-right: 2px;
+        }
+
+        p {
+            color: colors.$error-color;
+            font-size: 1.2rem;
         }
     }
 }
