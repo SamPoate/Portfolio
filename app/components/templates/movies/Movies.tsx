@@ -126,7 +126,7 @@ export const Movies: React.FC = () => {
     return (
         <main className={styles.main}>
             <section>
-                <h1>What should I watch?</h1>
+                <h1>Where is the movie streaming?</h1>
                 <div className={styles.search}>
                     <Input
                         label='Movie Name'
