@@ -1,4 +1,5 @@
 @use '../../scss/colors';
+@use '../../scss/mixins';
 
 .container {
     display: flex;
@@ -13,6 +14,10 @@
         height: 60px;
         padding: 0 40px;
         background: colors.$primary-background-color;
+
+        @include mixins.breakpoint(md) {
+            padding: 0 20px;
+        }
 
         p {
             color: colors.$primary-font-color;
@@ -41,6 +46,10 @@
         padding: 0 40px;
         margin-top: auto;
         background: colors.$secondary-background-color;
+
+        @include mixins.breakpoint(md) {
+            padding: 0 20px;
+        }
 
         p {
             color: colors.$primary-font-color;
