@@ -21,9 +21,9 @@ export const Home: React.FC = () => {
                             <Link href='/flight-tracker' passHref>
                                 <button>Flight Tracker</button>
                             </Link>
-                            <Link href='/mystery' passHref>
-                                <button>Mystery Box</button>
-                            </Link>
+                            {/* <Link href='/url-inspector' passHref>
+                                <button>URL Inspector</button>
+                            </Link> */}
                         </div>
                     </div>
                 </div>
