@@ -97,7 +97,7 @@
                         margin-left: 20px;
                     }
 
-                    &:last-of-type {
+                    &:nth-of-type(3) {
                         margin-left: 10px;
 
                         p {
@@ -113,6 +113,10 @@
 
             .whereWatch {
                 margin-top: 30px;
+
+                > p small {
+                    font-size: 1.2rem;
+                }
 
                 > div {
                     display: flex;

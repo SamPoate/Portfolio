@@ -8,10 +8,10 @@
     background: #fff;
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transform: scale(1.015);
     cursor: pointer;
 
     &:hover {
-        transform: scale(1.015);
         z-index: 10;
         transition: transform 0.15s ease;
     }

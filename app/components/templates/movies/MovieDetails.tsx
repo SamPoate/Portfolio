@@ -8,6 +8,8 @@ import imdb from '@image/imdb-logo.svg';
 import disney from '@image/disney-logo.svg';
 import netflix from '@image/netflix-logo.svg';
 import prime from '@image/prime-logo.svg';
+import apple from '@image/apple-logo.svg';
+import now from '@image/now-logo.svg';
 import rottenTomatoes from '@image/rotten-tomatoes-logo.svg';
 import metacritic from '@image/metacritic-logo.svg';
 import styles from './MovieDetails.module.scss';
@@ -210,11 +212,13 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
                         })}
                     </div>
                     <div className={styles.whereWatch}>
-                        <p>Where can I watch it?</p>
+                        <p>
+                            Where can I watch it? <small>(click to visit)</small>
+                        </p>
                         <div>
                             {Object.keys(movie.streamingInfo).length > 0 ? (
                                 Object.keys(movie.streamingInfo).map(platform => {
-                                    if (['disney', 'netflix', 'prime'].includes(platform)) {
+                                    if (['disney', 'netflix', 'prime', 'apple', 'now'].includes(platform)) {
                                         let logo;
 
                                         switch (platform) {
@@ -228,6 +232,14 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
 
                                             case 'prime':
                                                 logo = prime;
+                                                break;
+
+                                            case 'apple':
+                                                logo = apple;
+                                                break;
+
+                                            case 'now':
+                                                logo = now;
                                                 break;
                                         }
 

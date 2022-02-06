@@ -147,7 +147,11 @@ export const Movies: React.FC = () => {
                         options={genres}
                     />
                     <Input
-                        label='Year'
+                        label={
+                            <>
+                                Year <small>(Optional)</small>
+                            </>
+                        }
                         placeholder='1985'
                         value={year}
                         onChange={({ target: { value } }) =>

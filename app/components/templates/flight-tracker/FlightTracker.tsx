@@ -227,7 +227,11 @@ export const FlightTracker: React.FC<FlightTrackerProps> = ({}) => {
             <section>
                 <div className={styles.search}>
                     <Input
-                        label='Flight IATA'
+                        label={
+                            <>
+                                Flight IATA <small>(Optional)</small>
+                            </>
+                        }
                         placeholder='BA502'
                         value={flightIATA}
                         onChange={({ target }) => setFlightIATA(target.value)}
@@ -280,7 +284,11 @@ export const FlightTracker: React.FC<FlightTrackerProps> = ({}) => {
                             flights
                                 .filter(flight => (liveOnly ? flight.live : true))
                                 .map((flight, index) => (
-                                    <div key={`${index}_${flight.flight.iata}`} className={styles.row}>
+                                    <div
+                                        key={`${index}_${flight.flight.iata}`}
+                                        className={[styles.row, flight.live ? styles.active : ''].join(' ')}
+                                        onClick={() => setSelectedFlight(flight)}
+                                    >
                                         <div className={styles.content}>
                                             <h2>{flight.flight.iata}</h2>
                                             <p>{flight.airline.name}</p>
@@ -302,11 +310,7 @@ export const FlightTracker: React.FC<FlightTrackerProps> = ({}) => {
                                             </div>
                                         </div>
                                         <div className={styles.actions}>
-                                            {flight.live && (
-                                                <button type='button' onClick={() => setSelectedFlight(flight)}>
-                                                    <FaPlane size={20} />
-                                                </button>
-                                            )}
+                                            {flight.live && <FaPlane size={20} />}
                                         </div>
                                     </div>
                                 ))

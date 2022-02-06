@@ -87,6 +87,19 @@
                     padding: 10px;
                     border-radius: 10px;
                     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                    transition: transform 0.15s ease;
+
+                    &.active {
+                        cursor: pointer;
+
+                        &:hover {
+                            transform: translateX(5px) scale(1.01);
+
+                            .actions svg {
+                                fill: #8cb0d9;
+                            }
+                        }
+                    }
 
                     ~ div {
                         margin-top: 10px;
@@ -124,21 +137,13 @@
                     }
 
                     .actions {
-                        min-width: 35px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 35px;
 
-                        button {
-                            display: flex;
-                            align-items: center;
-                            padding: 0 5px 0 10px;
-                            cursor: pointer;
-
-                            svg {
-                                fill: #264a73;
-
-                                &:hover {
-                                    fill: #8cb0d9;
-                                }
-                            }
+                        svg {
+                            fill: #264a73;
                         }
                     }
                 }
