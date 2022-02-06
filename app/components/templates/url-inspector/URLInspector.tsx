@@ -14,10 +14,6 @@ export const URLInspector: React.FC<URLInspectorProps> = ({}) => {
             const response = await axios.get('https://www.googleapis.com/pagespeedonline/v5', {
                 data: {
                     url
-                },
-                headers: {
-                    'Access-Control-Allow-Origin': 'http://localhost:3000',
-                    'Access-Control-Allow-Credentials': 'true'
                 }
             });
 
