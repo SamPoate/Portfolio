@@ -1,0 +1,43 @@
+@use '../../../scss/colors';
+@use '../../../scss/mixins';
+
+.main {
+    flex: 1;
+    padding: 20px 10px;
+    background: colors.$tertiary-background-color;
+
+    @include mixins.breakpoint(md) {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    section {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        max-width: 1024px;
+        margin: 0 auto;
+
+        .search {
+            flex: 1;
+
+            > div,
+            > button {
+                width: 100%;
+            }
+
+            > button {
+                margin-top: 20px;
+            }
+        }
+
+        .results {
+            flex: 2;
+        }
+    }
+}
