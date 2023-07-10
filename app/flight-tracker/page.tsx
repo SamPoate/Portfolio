@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import moment from 'moment';
@@ -8,8 +9,6 @@ import Input from '@element/input/Input';
 import Button from '@element/button/Button';
 import Select from '@element/select/Select';
 import styles from './FlightTracker.module.scss';
-
-interface FlightTrackerProps {}
 
 type FlightStatusTypes = 'all' | 'scheduled' | 'active' | 'landed' | 'cancelled' | 'incident' | 'diverted';
 
@@ -121,7 +120,7 @@ const AircraftMarker: React.FC<{ lat: number; lng: number; direction: number }> 
     </div>
 );
 
-export const FlightTracker: React.FC<FlightTrackerProps> = ({}) => {
+const FlightTracker: React.FC = () => {
     const [flightIATA, setFlightIATA] = useState<string>('');
     const [flightStatus, setFlightStatus] = useState<FlightStatusTypes>('all');
     const [airline, setAirline] = useState<string>('all');
@@ -274,7 +273,9 @@ export const FlightTracker: React.FC<FlightTrackerProps> = ({}) => {
                             <div className={styles.loader}>
                                 <PulseLoader
                                     color='#8cb0d9'
-                                    css='opacity: 0.75'
+                                    cssOverride={{
+                                        opacity: 0.75
+                                    }}
                                     loading
                                     size={15}
                                     speedMultiplier={0.6}
@@ -319,6 +320,7 @@ export const FlightTracker: React.FC<FlightTrackerProps> = ({}) => {
                 </div>
                 <div className={styles.flightDetails}>
                     <div className={styles.map}>
+                        {/* @ts-ignore */}
                         <GoogleMapReact
                             bootstrapURLKeys={{ key: 'AIzaSyAsXIRjs7Ujl1gUQWmxHk_T8-g6Xzb1i5E' }}
                             defaultCenter={{

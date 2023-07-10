@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import axios from 'axios';
 import Input from '@element/input/Input';
@@ -6,7 +7,7 @@ import styles from './URLInspector.module.scss';
 
 interface URLInspectorProps {}
 
-export const URLInspector: React.FC<URLInspectorProps> = ({}) => {
+const URLInspector: React.FC<URLInspectorProps> = ({}) => {
     const [url, setUrl] = useState<string>('');
 
     const submit = async () => {

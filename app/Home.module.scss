@@ -1,5 +1,5 @@
-@use '../../../scss/colors';
-@use '../../../scss/mixins';
+@use './scss/colors';
+@use './scss/mixins';
 
 .main {
     display: flex;
@@ -78,7 +78,10 @@
                         margin-top: 30px;
                     }
 
-                    button {
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         color: colors.$primary-font-color;
                         font-size: 1.6rem;
                         line-height: 1;
@@ -96,7 +99,7 @@
                             background: colors.$primary-background-color;
                         }
 
-                        ~ button {
+                        ~ a {
                             margin-left: 20px;
 
                             @include mixins.breakpoint(md) {

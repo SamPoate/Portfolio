@@ -85,7 +85,7 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
             setDeltaY(0);
         },
         onSwiping: event => setDeltaY(event.deltaY),
-        preventDefaultTouchmoveEvent: true
+        touchEventOptions: { passive: true }
     });
 
     useEffect(() => {
@@ -156,8 +156,8 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
                         alt={movie.title || 'Movie Image'}
                         width={400}
                         height={600}
-                        objectFit={movie.posterURLs[500] ? 'cover' : 'contain'}
-                        objectPosition={movie.posterURLs[500] ? 'center top' : 'center 20%'}
+                        // objectFit={movie.posterURLs[500] ? 'cover' : 'contain'}
+                        // objectPosition={movie.posterURLs[500] ? 'center top' : 'center 20%'}
                     />
                 </div>
                 <div style={{ marginBottom: -deltaY }} className={styles.content}>
@@ -203,7 +203,7 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
                                             alt={Source}
                                             width={40}
                                             height={20}
-                                            objectFit='contain'
+                                            // objectFit='contain'
                                         />
                                     )}
                                     <p>- {Value}</p>
@@ -253,7 +253,11 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
                                             >
                                                 {logo ? (
                                                     <div className={styles.logo}>
-                                                        <Image src={logo} alt={platform} objectFit='contain' />
+                                                        <Image
+                                                            src={logo}
+                                                            alt={platform}
+                                                            //  objectFit='contain'
+                                                        />
                                                     </div>
                                                 ) : (
                                                     <p>{platform}</p>

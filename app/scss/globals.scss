@@ -87,3 +87,7 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+[data-nextjs-scroll-focus-boundary] {
+    display: contents;
+}

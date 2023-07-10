@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { AiOutlineFileSearch } from 'react-icons/ai';
@@ -21,7 +22,7 @@ export interface ISearch {
     imdbID: string;
 }
 
-export const Movies: React.FC = () => {
+const MoviesPage: React.FC = () => {
     const [title, setTitle] = useState<string>('');
     const [type, setType] = useState<MediaTypes>('all');
     const [year, setYear] = useState<string>('');
@@ -192,7 +193,7 @@ export const Movies: React.FC = () => {
                     <div ref={ref} className={styles.loader}>
                         <PulseLoader
                             color='#8cb0d9'
-                            css='opacity: 0.3'
+                            cssOverride={{ opacity: 0.3 }}
                             loading={loading}
                             size={15}
                             speedMultiplier={0.6}
@@ -205,4 +206,4 @@ export const Movies: React.FC = () => {
     );
 };
 
-export default Movies;
+export default MoviesPage;
