@@ -65,20 +65,18 @@
             > div {
                 display: flex;
                 align-items: center;
-
-                p {
-                    font-size: 1.4rem;
-
-                    a {
-                        text-decoration: underline;
-                    }
-                }
             }
 
-            .socials svg {
-                fill: colors.$primary-font-color;
-                width: 20px;
-                height: 20px;
+            .socials {
+                a ~ a {
+                    margin-left: 10px;
+                }
+
+                svg {
+                    fill: colors.$primary-font-color;
+                    width: 20px;
+                    height: 20px;
+                }
             }
         }
     }

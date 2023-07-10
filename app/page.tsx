@@ -8,7 +8,7 @@ const HomePage: React.FC = () => (
             <div>
                 <div>
                     <h1>Sam Poate</h1>
-                    <p>Self-taught Front End Engineer,</p>
+                    <p>Self-taught Software Engineer,</p>
                 </div>
             </div>
             <div>
@@ -17,6 +17,9 @@ const HomePage: React.FC = () => (
                     <div className={styles.projectLinks}>
                         <Link href='/movies'>Movie Finder</Link>
                         <Link href='/flight-tracker'>Flight Tracker</Link>
+                        <a href='//crewletics.com' target='_blank'>
+                            Crewletics
+                        </a>
                         {/* <Link href='/url-inspector' passHref>
                                 <button>URL Inspector</button>
                             </Link> */}
