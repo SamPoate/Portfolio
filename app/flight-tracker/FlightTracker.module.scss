@@ -196,6 +196,10 @@
                     &:first-of-type {
                         flex: 3;
 
+                        h3 span {
+                            text-transform: capitalize;
+                        }
+
                         .airportInfo {
                             display: flex;
                             align-items: center;

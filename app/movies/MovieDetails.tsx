@@ -152,12 +152,14 @@ export const MovieDetails: React.FC<MovieDetailsProps> = ({ movieId, setActiveMo
             <div {...swipeHandlers} onClick={event => event.stopPropagation()}>
                 <div className={styles.image}>
                     <Image
-                        src={movie.posterURLs.original || logo}
+                        src={details.Poster || logo}
                         alt={movie.title || 'Movie Image'}
                         width={400}
                         height={600}
-                        // objectFit={movie.posterURLs[500] ? 'cover' : 'contain'}
-                        // objectPosition={movie.posterURLs[500] ? 'center top' : 'center 20%'}
+                        style={{
+                            objectFit: details.Poster ? 'cover' : 'contain',
+                            objectPosition: details.Poster ? 'center top' : 'center 20%'
+                        }}
                     />
                 </div>
                 <div style={{ marginBottom: -deltaY }} className={styles.content}>

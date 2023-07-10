@@ -233,7 +233,7 @@ const FlightTracker: React.FC = () => {
                         }
                         placeholder='BA502'
                         value={flightIATA}
-                        onChange={({ target }) => setFlightIATA(target.value)}
+                        onChange={({ target }) => setFlightIATA(target.value?.toLocaleUpperCase())}
                     />
                     <Select
                         label='Flight Status'
@@ -347,21 +347,31 @@ const FlightTracker: React.FC = () => {
                     {selectedFlight && (
                         <div className={styles.flight}>
                             <div>
-                                <h3>{selectedFlight.flight.iata}</h3>
+                                <h3>
+                                    {selectedFlight.flight.iata} - <span>{selectedFlight.flight_status}</span>
+                                </h3>
                                 <p>
                                     <strong>{selectedFlight.airline.name}</strong>
                                 </p>
                                 <div className={styles.airportInfo}>
                                     <FaPlaneDeparture />
                                     <p>
-                                        {selectedFlight.departure.airport} ({selectedFlight.departure.iata}) -{' '}
+                                        {selectedFlight.departure.airport}
+                                        {selectedFlight.departure.terminal
+                                            ? ` T${selectedFlight.departure.terminal}`
+                                            : ''}{' '}
+                                        ({selectedFlight.departure.iata}) -{' '}
                                         {moment(selectedFlight.departure.estimated).format('Do MMM HH:mm')}
                                     </p>
                                 </div>
                                 <div className={styles.airportInfo}>
                                     <FaPlaneArrival />
                                     <p>
-                                        {selectedFlight.arrival.airport} ({selectedFlight.arrival.iata}) -{' '}
+                                        {selectedFlight.arrival.airport}
+                                        {selectedFlight.arrival.terminal
+                                            ? ` T${selectedFlight.arrival.terminal}`
+                                            : ''}{' '}
+                                        ({selectedFlight.arrival.iata}) -{' '}
                                         {moment(selectedFlight.arrival.estimated).format('Do MMM HH:mm')}
                                     </p>
                                 </div>

@@ -15,11 +15,12 @@ export const Card: React.FC<CardProps> = ({ movie, setActiveMovieId }) => (
             <Image
                 src={movie.Poster.startsWith('http') ? movie.Poster : logo}
                 alt={movie.Title || 'Movie Image'}
-                // width={300}
-                // height={375}
-                objectFit={movie.Poster.startsWith('http') ? 'cover' : 'contain'}
-                objectPosition={movie.Poster.startsWith('http') ? 'center top' : 'center 20%'}
-                fill
+                width={300}
+                height={375}
+                style={{
+                    objectFit: movie.Poster.startsWith('http') ? 'cover' : 'contain',
+                    objectPosition: movie.Poster.startsWith('http') ? 'center top' : 'center 20%'
+                }}
             />
         </div>
         <div className={styles.content}>
